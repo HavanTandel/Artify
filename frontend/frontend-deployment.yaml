@@ -20,5 +20,5 @@ spec:
         - containerPort: 80
         env:
         - name: API_BASE_URL
-          value: "http://ad12d1cfb996a4aab9880fa3f6a22d2b-1096797181.ap-south-1.elb.amazonaws.com"
+          value: "http://a99740ee92415435f9abe6c44d7a620b-1171611830.ap-south-1.elb.amazonaws.com"
         
