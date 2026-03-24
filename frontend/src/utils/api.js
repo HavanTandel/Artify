@@ -1,8 +1,8 @@
 import axios from "axios";
 import { getStoredToken } from "./auth";
 
-// const API_BASE_URL = import.meta.env.VITE_API_URL || "http://ad12d1cfb996a4aab9880fa3f6a22d2b-1096797181.ap-south-1.elb.amazonaws.com";
-const API_BASE_URL = import.meta.env.VITE_API_URL
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://a99740ee92415435f9abe6c44d7a620b-1171611830.ap-south-1.elb.amazonaws.com";
+// const API_BASE_URL = import.meta.env.VITE_API_URL
 
 export const api = axios.create({
   baseURL: API_BASE_URL,
