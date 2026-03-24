@@ -43,8 +43,10 @@ jobs:
           
       - name: Deploy to Kubernetes 
         run: |
-          kubectl apply -f backend/backend.yaml
-          kubectl apply -f frontend/frontend.yaml
+          kubectl apply -f backend/backend-deployment.yaml
+          kubectl apply -f backend/backend-service.yaml
+          kubectl apply -f frontend/frontend-deployment.yaml
+          kubectl apply -f frontend/frontend-service.yaml
           
       - name:  Restart Deployments
         run:  |
