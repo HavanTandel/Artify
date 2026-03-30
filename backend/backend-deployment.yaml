@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_backend:${{ github.sha }}
+        image: 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_backend
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
