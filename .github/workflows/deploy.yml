@@ -24,9 +24,6 @@ jobs:
       - name: Login to ECR
         run:  |
           aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 889168908024.dkr.ecr.ap-south-1.amazonaws.com
-      
-      - name: Deletion of old docker image
-        run: docker rmi -f $(docker images -q)
 
       - name: Build Backend Image
         run: |
@@ -36,7 +33,7 @@ jobs:
 
       - name: Build Frontend Image
         run: |
-          docker build --no-cache --build-arg VITE_API_URL=http://a99740ee92415435f9abe6c44d7a620b-1171611830.ap-south-1.elb.amazonaws.com -t artify_frontend:latest ./frontend
+          docker build --no-cache -t artify_frontend:latest ./frontend
           docker tag artify_frontend:latest 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_frontend:latest
           docker push 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_frontend:latest
 

@@ -1,3 +1,3 @@
 window.RUNTIME_CONFIG = {
-  API_URL: "http://a99740ee92415435f9abe6c44d7a620b-1171611830.ap-south-1.elb.amazonaws.com"
+  API_URL: "http://aee7c4d4933c7400f9dfd03bbb161bc1-1332424929.ap-south-1.elb.amazonaws.com"
 };
