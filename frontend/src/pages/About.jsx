@@ -3,7 +3,7 @@ import "./About.css";
 const About = () => (
   <section className="section-block site-shell about-page">
     <div className="about-hero reveal">
-      <span className="eyebrow">About</span>
+      <span className="eyebrow">About Artify</span>
       <h1>Artify is a virtual gallery shaped like a premium digital museum.</h1>
       <p>
         The platform brings artists, collectors, and administrators into one curated
