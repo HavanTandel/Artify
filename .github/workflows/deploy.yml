@@ -27,15 +27,15 @@ jobs:
 
       - name: Build Backend Image
         run: |
-          docker build --no-cache -t backend:v2 ./backend
-          docker tag backend:v2 889168908024.dkr.ecr.ap-south-1.amazonaws.com/backend:v2
-          docker push 889168908024.dkr.ecr.ap-south-1.amazonaws.com/backend:v2
+          docker build --no-cache -t artify_backend:latest ./artify_backend
+          docker tag artify_backend:latest 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_backend:latest
+          docker push 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_backend:latest
 
       - name: Build Frontend Image
         run: |
-          docker build --no-cache --build-arg VITE_API_URL=http://a99740ee92415435f9abe6c44d7a620b-1171611830.ap-south-1.elb.amazonaws.com -t frontend:v2 ./frontend
-          docker tag frontend:v2 889168908024.dkr.ecr.ap-south-1.amazonaws.com/frontend:v2
-          docker push 889168908024.dkr.ecr.ap-south-1.amazonaws.com/frontend:v2
+          docker build --no-cache --build-arg VITE_API_URL=http://a99740ee92415435f9abe6c44d7a620b-1171611830.ap-south-1.elb.amazonaws.com -t artify_frontend:latest ./artify_frontend
+          docker tag artify_frontend:latest 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_frontend:latest
+          docker push 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_frontend:latest
 
       - name: Show docker images
         run: |
@@ -43,7 +43,7 @@ jobs:
 
       - name: Update Kubeconfig
         run: |
-          aws eks update-kubeconfig --region ap-south-1 --name mycluster
+          aws eks update-kubeconfig --region ap-south-1 --name clusterartify
           
       - name: Deploy to Kubernetes 
         run: |

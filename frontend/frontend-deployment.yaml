@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 889168908024.dkr.ecr.ap-south-1.amazonaws.com/frontend:v1
+        image: 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_frontend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
