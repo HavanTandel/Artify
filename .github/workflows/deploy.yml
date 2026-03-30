@@ -28,6 +28,8 @@ jobs:
       - name: Delete old images
         run: |
           docker rmi -f $(docker images -q)
+          aws ecr batch-delete-image --repository-name artify_backend  --region ap-south-1 --image-ids “$(aws ecr list-images --repository-name artify_backend --query 'imageIds[*]' --output json)”
+          aws ecr batch-delete-image --repository-name artify_frontend  --region ap-south-1 --image-ids “$(aws ecr list-images --repository-name artify_frontend --query 'imageIds[*]' --output json)”
 
       - name: Build Backend Image
         run: |
