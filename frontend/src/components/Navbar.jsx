@@ -37,7 +37,7 @@ const Navbar = () => {
             Gallery
           </NavLink>
           <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")}>
-            About
+            About Us
           </NavLink>
           {user ? (
             <NavLink
