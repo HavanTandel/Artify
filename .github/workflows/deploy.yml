@@ -25,6 +25,11 @@ jobs:
         run:  |
           aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 889168908024.dkr.ecr.ap-south-1.amazonaws.com
 
+      - name: Delete old images
+        run: |
+          docker rmi -f $(docker images -q artify_backend:latest) || true
+          docker rmi -f $(docker images -q artify_frontend:latest) || true
+
       - name: Build Backend Image
         run: |
           docker build --no-cache -t artify_backend:latest ./backend
