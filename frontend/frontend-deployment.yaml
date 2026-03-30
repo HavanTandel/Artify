@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_frontend
+        image: 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_frontend:${{ github.sha }}
         imagePullPolicy: Always
         ports:
         - containerPort: 80

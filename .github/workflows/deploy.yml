@@ -33,13 +33,13 @@ jobs:
 
       - name: Build Backend Image
         run: |
-          docker build --no-cache -t artify_backend ./backend
+          docker build --no-cache -t artify_backend:${{ github.sha }} ./backend
           docker tag artify_backend:${{ github.sha }} 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_backend:${{ github.sha }}
           docker push 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_backend:${{ github.sha }}
 
       - name: Build Frontend Image
         run: |
-          docker build --no-cache -t artify_frontend ./frontend
+          docker build --no-cache -t artify_frontend:${{ github.sha }} ./frontend
           docker tag artify_frontend:${{ github.sha }} 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_frontend:${{ github.sha }}
           docker push 889168908024.dkr.ecr.ap-south-1.amazonaws.com/artify_frontend:${{ github.sha }}
 
