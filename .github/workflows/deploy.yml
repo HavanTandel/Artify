@@ -68,8 +68,4 @@ jobs:
       - name: Send failure metric to CloudWatch 
         if: failure() 
         run: | 
-          aws cloudwatch put-metric-data \ 
-          --namespace "CICD" \ 
-          --metric-name "PipelineFailure" \ 
-          --value 1 \ 
-          --region ap-south-1
+          aws cloudwatch put-metric-data --namespace "CICD" --metric-name "PipelineFailure" --value 1 --region ap-south-1
