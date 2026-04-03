@@ -64,3 +64,12 @@ jobs:
         run:  |
           kubectl rollout restart deployment backend-deployment
           kubectl rollout restart deployment frontend-deployment
+
+      - name: Send failure metric to CloudWatch 
+        if: failure() 
+        run: | 
+          aws cloudwatch put-metric-data \ 
+          --namespace "CICD" \ 
+          --metric-name "PipelineFailure" \ 
+          --value 1 \ 
+          --region ap-south-1
