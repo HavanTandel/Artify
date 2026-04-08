@@ -16,7 +16,7 @@ const errorHandler = require("./middleware/errorMiddleware");
 
 const app = express();
 const corsOptions = {
-  origin: "http://a449a967b33704c91b73a6c464edda3f-638456440.ap-south-1.elb.amazonaws.com",
+  origin: "http://a9bcb58c481214045b3a9b5f8ede985f-2064320259.ap-south-1.elb.amazonaws.com",
 //  origin: "*",
   methods: [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ],
   allowedHeaders: ["Content-Type", "Authorization"],
